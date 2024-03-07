@@ -2,7 +2,7 @@ import java.util.*;
 class Bank {
     Scanner Sc = new Scanner(System.in);
     int count = 0;  // ? to keep track of the no. of customers
-    int accounts[][] = new int[10][2];
+    int Savingaccounts[][] = new int[10][2];
     int TOTAL_ACC = 10;
     public static void main(String args[])
     {
@@ -11,7 +11,7 @@ class Bank {
         
         while(true)
         {
-            System.out.println("Enter Your Choice : \n1->Open Account\n2->Close Account\n3->Access Account\n4->Exit");
+        System.out.println("Enter Your Choice : \n1->Open Account\n2->Close Account\n3->Access Account\n4->Exit");
         int choice = Sc.nextInt();
         switch(choice)
         {
@@ -61,14 +61,14 @@ class Bank {
         
         System.out.println("Enter the amount to deposit : ");
         int amt = Sc.nextInt();
-        accounts[count][0] = accId;
-        accounts[count][1] = amt;
-        count++;    // To keep track of Bank Accounts
+        Savingaccounts[count][0] = accId;
+        Savingaccounts[count][1] = amt;
+        count++;    // To keep track of Bank Savingaccounts
     }
     
     boolean isIdDuplicate(int id) {
         for (int i = 0; i < count; i++) {
-            if (accounts[i][0] == id) {
+            if (Savingaccounts[i][0] == id) {
                 return true; // ID already exists
             }
         }
@@ -80,13 +80,13 @@ class Bank {
         System.err.println("Enter the Account id : ");
         int accId = Sc.nextInt();
         boolean found = false;
-        for(int i = 0 ; i < accounts.length; i++)
+        for(int i = 0 ; i < Savingaccounts.length; i++)
         {
-            if(accId == accounts[i][0])
+            if(accId == Savingaccounts[i][0])
             {
                 found = true;
-                accounts[i][0] = 0;
-                accounts[i][1] = 0; 
+                Savingaccounts[i][0] = 0;
+                Savingaccounts[i][1] = 0; 
             }
         }
         if(!found)
@@ -101,9 +101,9 @@ class Bank {
         System.err.println("Enter the Account id : ");
         int accId = Sc.nextInt();
         boolean found = false;
-        for(int i = 0 ; i < accounts.length; i++)
+        for(int i = 0 ; i < Savingaccounts.length; i++)
         {
-            if(accId == accounts[i][0])
+            if(accId == Savingaccounts[i][0])
             {
                 found = true;
             }
@@ -122,15 +122,15 @@ class Bank {
             case 1:
             System.out.println("Enter amount to be deposited:");
             amt = Sc.nextInt();
-            for(int i = 0 ; i < accounts.length; i++)
+            for(int i = 0 ; i < Savingaccounts.length; i++)
             {
-                if(accId == accounts[i][0])
+                if(accId == Savingaccounts[i][0])
                 {
-                    accounts[i][1] += amt;
+                    Savingaccounts[i][1] += amt;
                     System.out.println("Do you want to display balance?\n[yes -> 1/ no -> 0]");
                     int cho = Sc.nextInt();
                     if(cho == 1){
-                        System.out.println("New Bank Balance : " + accounts[i][1]);
+                        System.out.println("New Bank Balance : " + Savingaccounts[i][1]);
                     }
 
 
@@ -142,26 +142,26 @@ class Bank {
             case 2:
             System.out.println("Enter Amount to withdraw :");
             amt = Sc.nextInt();
-            for(int i = 0 ; i < accounts.length; i++)
+            for(int i = 0 ; i < Savingaccounts.length; i++)
             {
-                if(accId == accounts[i][0])
+                if(accId == Savingaccounts[i][0])
                 {
-                    accounts[i][1] -= amt;
+                    Savingaccounts[i][1] -= amt;
                     System.out.println("Do you want to display balance?\n[yes -> 1/ no -> 0]");
                     int cho = Sc.nextInt();
                     if(cho == 1){
-                        System.out.println("New Bank Balance : " + accounts[i][1]);
+                        System.out.println("New Bank Balance : " + Savingaccounts[i][1]);
                     }
                 }
             }
             break;
 
             case 3:
-                for(int i = 0 ; i < accounts.length; i++)
+                for(int i = 0 ; i < Savingaccounts.length; i++)
                 {
-                    if(accId == accounts[i][0])
+                    if(accId == Savingaccounts[i][0])
                     {
-                        System.out.println("Bank Balance : " + accounts[i][1]);
+                        System.out.println("Bank Balance : " + Savingaccounts[i][1]);
                     }
                 }
             break;
