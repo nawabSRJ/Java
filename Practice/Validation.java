@@ -21,7 +21,7 @@ class Validation{
             System.out.println("Size cannot be less than 8 chars\nYours is " +  uname.length());
             return false;
         }else{
-            int upper = 0 , lower = 0 , num = 0 ,special = 0;
+            int upper = 0 , lower = 0 , num = 0 ;
             for(int i = 0; i < uname.length(); i++)
             {
                 if(uname.charAt(i) >= 'a' && uname.charAt(i) <= 'z' ){
@@ -44,4 +44,5 @@ class Validation{
 
         return flag;
     }
+    
 }
