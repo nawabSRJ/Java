@@ -1,5 +1,9 @@
 
 import java.util.Stack;
+class Make{
+
+}
+
 class Implement{
     int val;
     public static void main(String args[])
@@ -30,10 +34,13 @@ class Implement{
         System.out.println("Using size() func : " + st.size());
         
         System.out.println("printing " + st);
-
+        System.out.println("Using hashCode() : " + st.hashCode());
         System.out.println("Clearing stack");
         st.clear();
         System.out.println("Is stack empty? : " + st.empty());
-      
+        System.out.println("Using hashCode() : " + st.hashCode());
+
+        
+
     }
 }

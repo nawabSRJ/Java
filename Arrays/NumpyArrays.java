@@ -44,7 +44,7 @@ class NumpyArrays {
                 System.out.println("Enter Size : ");
                 r = Integer.parseInt(br.readLine());
                 twoD = obj.IdentityMatrix(r);
-                System.out.print("Array Created : \n\n");
+                System.out.print("Array Created : \n");
                 obj.show_numpyArray(twoD);
                 break;
         
